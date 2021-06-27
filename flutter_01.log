@@ -1,0 +1,113 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get
+
+## exception
+
+ProcessPackageException: ProcessException: The process cannot access the file because it is being used by another process.
+
+  Command: "C:\Program Files\Git\cmd\git.EXE" rev-parse --abbrev-ref HEAD
+
+```
+#0      LocalProcessManager.runSync (package:process/src/interface/local_process_manager.dart:120:7)
+#1      ErrorHandlingProcessManager.runSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:685:24)
+#2      _runSync (package:flutter_tools/src/base/error_handling_io.dart:573:14)
+#3      ErrorHandlingProcessManager.runSync (package:flutter_tools/src/base/error_handling_io.dart:684:12)
+#4      _DefaultProcessUtils.runSync (package:flutter_tools/src/base/process.dart:373:51)
+#5      _runGit (package:flutter_tools/src/version.dart:640:23)
+#6      FlutterVersion.getBranchName.<anonymous closure> (package:flutter_tools/src/version.dart:287:29)
+#7      FlutterVersion.getBranchName (package:flutter_tools/src/version.dart:289:6)
+#8      FlutterVersion.getVersionString (package:flutter_tools/src/version.dart:276:17)
+#9      _DefaultUsage.initialize (package:flutter_tools/src/reporting/usage.dart:207:62)
+#10     new Usage (package:flutter_tools/src/reporting/usage.dart:85:21)
+#11     runInContext.<anonymous closure> (package:flutter_tools/src/context_runner.dart:321:20)
+#12     AppContext._generateIfNecessary.<anonymous closure> (package:flutter_tools/src/base/context.dart:104:42)
+#13     _LinkedHashMapMixin.putIfAbsent (dart:collection-patch/compact_hash.dart:311:23)
+#14     AppContext._generateIfNecessary (package:flutter_tools/src/base/context.dart:92:20)
+#15     AppContext.get (package:flutter_tools/src/base/context.dart:121:32)
+#16     AppContext.get (package:flutter_tools/src/base/context.dart:119:24)
+#17     flutterUsage (package:flutter_tools/src/globals_null_migrated.dart:43:35)
+#18     runInContext.<anonymous closure> (package:flutter_tools/src/context_runner.dart:372:24)
+#19     AppContext._generateIfNecessary.<anonymous closure> (package:flutter_tools/src/base/context.dart:104:42)
+#20     _LinkedHashMapMixin.putIfAbsent (dart:collection-patch/compact_hash.dart:311:23)
+#21     AppContext._generateIfNecessary (package:flutter_tools/src/base/context.dart:92:20)
+#22     AppContext.get (package:flutter_tools/src/base/context.dart:121:32)
+#23     AppContext.get (package:flutter_tools/src/base/context.dart:119:24)
+#24     xcodeProjectInterpreter (package:flutter_tools/src/globals_null_migrated.dart:44:65)
+#25     runInContext.<anonymous closure> (package:flutter_tools/src/context_runner.dart:348:42)
+#26     AppContext._generateIfNecessary.<anonymous closure> (package:flutter_tools/src/base/context.dart:104:42)
+#27     _LinkedHashMapMixin.putIfAbsent (dart:collection-patch/compact_hash.dart:311:23)
+#28     AppContext._generateIfNecessary (package:flutter_tools/src/base/context.dart:92:20)
+#29     AppContext.get (package:flutter_tools/src/base/context.dart:121:32)
+#30     AppContext.get (package:flutter_tools/src/base/context.dart:119:24)
+#31     xcode (package:flutter_tools/src/globals_null_migrated.dart:45:29)
+#32     runInContext.<anonymous closure> (package:flutter_tools/src/context_runner.dart:252:24)
+#33     AppContext._generateIfNecessary.<anonymous closure> (package:flutter_tools/src/base/context.dart:104:42)
+#34     _LinkedHashMapMixin.putIfAbsent (dart:collection-patch/compact_hash.dart:311:23)
+#35     AppContext._generateIfNecessary (package:flutter_tools/src/base/context.dart:92:20)
+#36     AppContext.get (package:flutter_tools/src/base/context.dart:121:32)
+#37     AppContext.get (package:flutter_tools/src/base/context.dart:119:24)
+#38     iosSimulatorUtils (package:flutter_tools/src/globals.dart:44:52)
+#39     runInContext.<anonymous closure> (package:flutter_tools/src/context_runner.dart:187:36)
+#40     AppContext._generateIfNecessary.<anonymous closure> (package:flutter_tools/src/base/context.dart:104:42)
+#41     _LinkedHashMapMixin.putIfAbsent (dart:collection-patch/compact_hash.dart:311:23)
+#42     AppContext._generateIfNecessary (package:flutter_tools/src/base/context.dart:92:20)
+#43     AppContext.get (package:flutter_tools/src/base/context.dart:121:32)
+#44     AppContext.get (package:flutter_tools/src/base/context.dart:119:24)
+#45     deviceManager (package:flutter_tools/src/globals.dart:29:44)
+#46     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:262:17)
+<asynchronous suspension>
+#47     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#48     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:232:5)
+<asynchronous suspension>
+#49     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:62:9)
+<asynchronous suspension>
+#50     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#51     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel dev, 2.3.0-0.1.pre, on Microsoft Windows [Version 10.0.19042.1052], locale en-US)
+    • Flutter version 2.3.0-0.1.pre at C:\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision d72bfb8d07 (9 weeks ago), 2021-04-26 06:05:55 -0700
+    • Engine revision de6e1adf97
+    • Dart version 2.14.0 (build 2.14.0-18.0.dev)
+
+[!] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    • Android SDK at C:\Users\LENOVO\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.3
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+[✓] Android Studio (version 4.1.0)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+
+[✓] VS Code (version 1.57.1)
+    • VS Code at C:\Users\LENOVO\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.23.0
+
+[✓] Connected device (3 available)
+    • Android SDK built for x86 (mobile) • emulator-5554 • android-x86    • Android 6.0 (API 23) (emulator)
+    • Chrome (web)                       • chrome        • web-javascript • Google Chrome 91.0.4472.114
+    • Edge (web)                         • edge          • web-javascript • Microsoft Edge 91.0.864.54
+
+! Doctor found issues in 1 category.
+```
